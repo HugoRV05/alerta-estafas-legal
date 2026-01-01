@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Servicio | Alerta Estafas</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="Logo Alerta Estafas" class="logo-img">
+                Alerta Estafas
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">Inicio</a>
+                <a href="privacy-policy.html">Privacidad</a>
+                <a href="terms.html" class="active">Términos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="section">
+            <div class="legal-header reveal">
+                <span style="color: var(--clr-primary-bright); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 16px;">Acuerdo de Seguridad Ciudadana</span>
+                <h1>Términos de Servicio</h1>
+                <p style="color: var(--clr-text-muted); font-size: 1.2rem;">Versión 1.1 | Actualizado: 1 de enero de 2026</p>
+            </div>
+
+            <div class="legal-grid">
+                <div class="sidebar-wrapper">
+                    <nav class="sidebar">
+                        <a href="#section-1">1. Aceptación</a>
+                        <a href="#section-2">2. Uso Correcto</a>
+                        <a href="#section-3">3. Descargo IA</a>
+                        <a href="#section-4">4. Responsabilidad</a>
+                        <a href="#section-5">5. Jurisdicción</a>
+                    </nav>
+                </div>
+
+                <article class="legal-body">
+                    <section id="section-1" class="reveal">
+                        <h2>1. Aceptación de los Términos</h2>
+                        <p>Al descargar o utilizar <strong>Alerta Estafas</strong>, aceptas de forma vinculante los presentes Términos de Servicio. El objetivo es preventivo e informativo.</p>
+                    </section>
+
+                    <section id="section-2" class="reveal">
+                        <h2>2. Uso Correcto del Servicio</h2>
+                        <ul>
+                            <li>No utilizar la plataforma para fines maliciosos o hostigamiento.</li>
+                            <li>No realizar abusos técnicos mediante automatismos.</li>
+                            <li>Entender que la info es una guía, no una verdad absoluta.</li>
+                        </ul>
+                    </section>
+
+                    <section id="section-3" class="reveal">
+                        <h2>3. Descargo de Responsabilidad (IA)</h2>
+                        <div class="card" style="border-left: 4px solid var(--clr-accent-red);">
+                            <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 16px;">Advertencia Técnica</h3>
+                            <p>Los resultados son sugerencias informativas. No garantizamos precisión absoluta y no nos responsabilizamos de decisiones basadas solo en alertas.</p>
+                        </div>
+                    </section>
+
+                    <section id="section-4" class="reveal">
+                        <h2>4. Limitación de Responsabilidad</h2>
+                        <p>HGLabs Studio no se responsabiliza de daños derivados de errores en la categorización de estafas.</p>
+                    </section>
+
+                    <section id="section-5" class="reveal">
+                        <h2>5. Modificaciones y Jurisdicción</h2>
+                        <p>El uso tras una actualización implica aceptación. Cualquier disputa se resolverá bajo legislación española.</p>
+                    </section>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>Alerta Estafas</h2>
+                    <p>Potenciando la ciberseguridad ciudadana con cercanía y tecnología.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Producto</h4>
+                    <ul>
+                        <li><a href="index.html#details">Funciones</a></li>
+                        <li><a href="index.html#how-it-works">Uso</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=studio.hglabs.alertaestafas">Descargar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacidad</a></li>
+                        <li><a href="terms.html">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="mailto:hglabs.studio@gmail.com">Email</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HGLabs Studio.</p>
+                <div style="display: flex; gap: 24px;">
+                    <span>Transparencia Radical</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const id = entry.target.getAttribute('id');
+                    if (id) {
+                        document.querySelectorAll('.sidebar a').forEach(a => {
+                            a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
