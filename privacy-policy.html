@@ -59,22 +59,23 @@
                 <article class="legal-body">
                     <section id="section-1" class="reveal">
                         <h2>1. Información General</h2>
-                        <p><strong>Alerta Estafas</strong> es desarrollada y mantenida por <strong>HGLabs Studio</strong>. Nuestra misión es empoderar a la ciudadanía mediante el uso ético y responsable de la inteligencia artificial para la prevención de fraudes digitales.</p>
-                        <p>Esta política detalla nuestro compromiso inquebrantable con la privacidad, basándonos en la recolección mínima de datos y la transparencia absoluta.</p>
+                        <p><strong>Alerta Estafas</strong> es una iniciativa desarrollada por <strong>HGLabs Studio</strong> con el objetivo de proporcionar una capa de protección adicional frente a la creciente ola de fraudes digitales.</p>
+                        <p>Nuestra filosofía se basa en la <strong>privacidad por diseño</strong>: solo procesamos aquello que es estrictamente necesario para protegerte, aplicando políticas de retención mínima y transparencia absoluta en cada proceso.</p>
                     </section>
 
                     <section id="section-2" class="reveal">
                         <h2>2. Información que Recopilamos</h2>
-                        <p>Recopilamos mínimos datos necesarios para el correcto funcionamiento de las alertas:</p>
+                        <p>Para ofrecer un servicio eficaz de detección, operamos bajo un modelo de recolección selectiva:</p>
                         <ul>
-                            <li><strong>Números de teléfono</strong>: Solo cuando el usuario consulta manualmente un número sospechoso.</li>
-                            <li><strong>Mensajes de texto</strong>: Analizados efímeramente bajo demanda del usuario.</li>
-                            <li><strong>Reportes Comunitarios</strong>: Datos anónimos aportados por voluntarios para mejorar la base de datos común.</li>
+                            <li><strong>Números de teléfono</strong>: Procesados únicamente cuando realizas una consulta manual para verificar su reputación.</li>
+                            <li><strong>Contenido de mensajes</strong>: Analizados bajo demanda mediante motores de IA para detectar patrones fraudulentos.</li>
+                            <li><strong>Reportes de la comunidad</strong>: Datos anonimizados que los usuarios comparten voluntariamente para fortalecer la seguridad colectiva.</li>
                         </ul>
                     </section>
 
                     <section id="section-3" class="reveal">
                         <h2>3. Cómo Usamos tu Información</h2>
+                        <p>La siguiente tabla detalla la gestión de los datos dentro de nuestra plataforma:</p>
                         <div class="data-table-wrapper">
                             <table>
                                 <thead>
@@ -86,19 +87,19 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Teléfonos consultados</td>
-                                        <td>Verificación de spam</td>
-                                        <td>No se almacena</td>
+                                        <td data-label="Tipo de Dato"><strong>Teléfonos consultados</strong></td>
+                                        <td data-label="Propósito">Verificación de spam y fraudes conocidos</td>
+                                        <td data-label="Retención">No se almacena</td>
                                     </tr>
                                     <tr>
-                                        <td>Mensajes analizados</td>
-                                        <td>Análisis mediante IA</td>
-                                        <td>En memoria (Efímero)</td>
+                                        <td data-label="Tipo de Dato"><strong>Mensajes analizados</strong></td>
+                                        <td data-label="Propósito">Detección de intencionalidad mediante IA</td>
+                                        <td data-label="Retención">En memoria (Efímero)</td>
                                     </tr>
                                     <tr>
-                                        <td>Reportes de comunidad</td>
-                                        <td>Seguridad colectiva</td>
-                                        <td>Anónimo</td>
+                                        <td data-label="Tipo de Dato"><strong>Reportes de comunidad</strong></td>
+                                        <td data-label="Propósito">Mejora de la seguridad colectiva</td>
+                                        <td data-label="Retención">Anónimo y Permanente</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -107,46 +108,61 @@
 
                     <section id="section-4" class="reveal">
                         <h2>4. Proveedores de Servicios de IA</h2>
-                        <p>Colaboramos con <strong>Groq Inc.</strong> para el procesamiento de lenguaje natural. Nuestra configuración garantiza:</p>
+                        <p>Utilizamos la infraestructura de <strong>Groq Inc.</strong> para el procesamiento de lenguaje natural de alta velocidad. Hemos configurado nuestra integración para cumplir los estándares más estrictos:</p>
                         <div class="card">
-                            <h3 style="font-size: 1.5rem; margin-bottom: 24px;">Compromiso de Privacidad</h3>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 24px; color: #fff;">Compromiso de Privacidad Groq</h3>
                             <ul>
-                                <li><strong>Retención Cero</strong>: Datos descartados tras el análisis.</li>
-                                <li><strong>Sin Entrenamiento</strong>: Tus datos no se usan para modelos de terceros.</li>
-                                <li><strong>Cifrado SSL</strong>: Comunicación totalmente segura.</li>
+                                <li><strong>Retención Cero</strong>: Los datos se procesan y se descartan inmediatamente tras generar la respuesta.</li>
+                                <li><strong>Sin Entrenamiento</strong>: Tus consultas no se utilizan para entrenar o mejorar modelos de terceros.</li>
+                                <li><strong>Cifrado de Extremo a Extremo</strong>: Toda comunicación viaja mediante túneles SSL cifrados.</li>
                             </ul>
                         </div>
                     </section>
 
                     <section id="section-5" class="reveal">
                         <h2>5. Notificaciones Push</h2>
-                        <p>Firebase Cloud Messaging permite el envío de alertas críticas sin comprometer tu identidad mediante tokens anónimos.</p>
+                        <p>Utilizamos <strong>Firebase Cloud Messaging</strong> para el envío de alertas críticas de seguridad. Para proteger tu anonimato:</p>
+                        <ul>
+                            <li>No asociamos los tokens de notificación con identidades personales.</li>
+                            <li>Solo enviamos información relevante sobre nuevas campañas de estafas detectadas.</li>
+                            <li>Puedes desactivar estas alertas en cualquier momento desde los ajustes de tu dispositivo.</li>
+                        </ul>
                     </section>
 
                     <section id="section-6" class="reveal">
                         <h2>6. Compartición de Datos</h2>
-                        <p>NUNCA vendemos tus datos personales. La compartición se limita a proveedores técnicos esenciales.</p>
+                        <p><strong>NUNCA vendemos, alquilamos ni comercializamos</strong> tus datos con terceros para fines publicitarios.</p>
+                        <p>La transferencia de información se limita estrictamente a los proveedores técnicos necesarios para la ejecución del servicio (como Groq o Firebase), bajo contratos que garantizan la confidencialidad y el uso exclusivo para la detección de fraudes.</p>
                     </section>
 
                     <section id="section-7" class="reveal">
                         <h2>7. Seguridad Técnica</h2>
-                        <p>Nuestra arquitectura prioriza el análisis efímero; los datos sensibles residen únicamente en memoria volátil.</p>
+                        <p>Nuestra infraestructura ha sido diseñada bajo el principio de <strong>"Data Minimization"</strong>. Implementamos medidas técnicas avanzadas:</p>
+                        <ul>
+                            <li><strong>Memoria Volátil</strong>: Los datos sensibles se procesan en memoria RAM y nunca se escriben en discos persistentes.</li>
+                            <li><strong>Protocolos Seguros</strong>: Uso obligatorio de HTTPS/TLS en todas las conexiones.</li>
+                            <li><strong>Anonimización</strong>: Eliminación de metadatos identificables antes del procesamiento por IA.</li>
+                        </ul>
                     </section>
 
                     <section id="section-8" class="reveal">
                         <h2>8. Tus Derechos</h2>
-                        <p>Tienes derecho a la transparencia y cancelación. Para cualquier duda, contáctanos.</p>
+                        <p>De acuerdo con la normativa vigente, tienes derecho a acceder, rectificar o solicitar la eliminación de cualquier dato que pudiéramos tener.</p>
+                        <p>Dado que nuestra arquitectura es mayoritariamente <strong>sin estado (stateless)</strong> y no almacenamos perfiles de usuario, en la mayoría de los casos no existen datos que eliminar tras finalizar tu sesión.</p>
                     </section>
 
                     <section id="section-9" class="reveal">
                         <h2>9. Menores de Edad</h2>
-                        <p>El servicio está enfocado a mayores de 13 años.</p>
+                        <p>El uso de <strong>Alerta Estafas</strong> está recomendado para mayores de 13 años. No recopilamos conscientemente información de menores sin el consentimiento de sus tutores legales.</p>
                     </section>
 
                     <section id="section-10" class="reveal">
                         <h2>10. Contacto</h2>
-                        <p>¿Tienes dudas? Escríbenos.</p>
-                        <a href="mailto:hglabs.studio@gmail.com" class="btn btn-primary">hglabs.studio@gmail.com</a>
+                        <p>Si tienes preguntas sobre nuestra política de privacidad o el tratamiento de tus datos, nuestro equipo de transparencia está a tu disposición:</p>
+                        <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+                            <p style="margin-bottom: 8px;">HGLabs Studio - Departamento de Privacidad</p>
+                            <a href="mailto:hglabs.studio@gmail.com" class="btn btn-primary" style="width: fit-content;">hglabs.studio@gmail.com</a>
+                        </div>
                     </section>
                 </article>
             </div>

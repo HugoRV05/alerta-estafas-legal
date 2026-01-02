@@ -309,7 +309,11 @@ nav.header-nav a:hover, nav.header-nav a.active {
     background: var(--clr-primary-glow);
     color: var(--clr-primary-bright);
     font-weight: 600;
-    box-shadow: 0 0 0 1px var(--clr-border-glow) inset;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2) inset;
+}
+
+.legal-body {
+    max-width: 800px;
 }
 
 .legal-body section {
@@ -318,9 +322,118 @@ nav.header-nav a:hover, nav.header-nav a.active {
 }
 
 .legal-body h2 {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     margin-bottom: var(--space-md);
     color: #fff;
+    letter-spacing: -0.02em;
+}
+
+.legal-body p {
+    margin-bottom: 24px;
+    color: var(--clr-text-main);
+    line-height: 1.8;
+}
+
+.legal-body ul {
+    margin-bottom: 32px;
+    list-style: none;
+}
+
+.legal-body ul li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 16px;
+    color: var(--clr-text-main);
+}
+
+.legal-body ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--clr-primary-bright);
+    font-weight: bold;
+}
+
+.legal-body strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* --- Data Table Styling --- */
+
+.data-table-wrapper {
+    margin: 40px 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--clr-border);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 24px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+td {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--clr-border);
+    color: var(--clr-text-main);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border-bottom: 1px solid var(--clr-border);
+        padding: 16px 0;
+    }
+    
+    td {
+        border: none;
+        padding: 8px 24px;
+        position: relative;
+        padding-left: 45%;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 24px;
+        width: 40%;
+        font-weight: 600;
+        color: var(--clr-text-muted);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
 }
 
 /* --- Premium Mega Footer --- */
