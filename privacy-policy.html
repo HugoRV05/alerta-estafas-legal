@@ -24,6 +24,9 @@
                 <img src="logo.svg" alt="Logo Alerta Estafas" class="logo-img">
                 Alerta Estafas
             </a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
             <nav class="header-nav">
                 <a href="index.html">Inicio</a>
                 <a href="privacy-policy.html" class="active">Privacidad</a>
@@ -35,9 +38,9 @@
     <div class="container">
         <main class="section">
             <div class="legal-header reveal">
-                <span style="color: var(--clr-primary-bright); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 16px;">Privacidad y Transparencia</span>
+                <span class="legal-tag">Privacidad y Transparencia</span>
                 <h1>Política de Privacidad</h1>
-                <p style="color: var(--clr-text-muted); font-size: 1.2rem;">Versión 1.2 | Actualizado: 1 de enero de 2026</p>
+                <p class="legal-subtitle">Versión 1.2 | Actualizado: 1 de enero de 2026</p>
             </div>
 
             <div class="legal-grid">
@@ -110,7 +113,7 @@
                         <h2>4. Proveedores de Servicios de IA</h2>
                         <p>Utilizamos la infraestructura de <strong>Groq Inc.</strong> para el procesamiento de lenguaje natural de alta velocidad. Hemos configurado nuestra integración para cumplir los estándares más estrictos:</p>
                         <div class="card">
-                            <h3 style="font-size: 1.5rem; margin-bottom: 24px; color: #fff;">Compromiso de Privacidad Groq</h3>
+                            <h3 class="legal-card-title">Compromiso de Privacidad Groq</h3>
                             <ul>
                                 <li><strong>Retención Cero</strong>: Los datos se procesan y se descartan inmediatamente tras generar la respuesta.</li>
                                 <li><strong>Sin Entrenamiento</strong>: Tus consultas no se utilizan para entrenar o mejorar modelos de terceros.</li>
@@ -149,7 +152,7 @@
                         <h2>8. Tus Derechos</h2>
                         <p>De acuerdo con la normativa vigente, tienes derecho a acceder, rectificar o solicitar la eliminación de cualquier dato que pudiéramos tener.</p>
                         <p>Dado que nuestra arquitectura es mayoritariamente <strong>sin estado (stateless)</strong> y no almacenamos perfiles de usuario, en la mayoría de los casos no existen datos que eliminar tras finalizar tu sesión.</p>
-                        <p>Para ejercer cualquiera de estos derechos o solicitar la <strong>eliminación de tus datos</strong>, simplemente escríbenos un correo a <a href="mailto:hglabs.studio@gmail.com" style="color: var(--clr-primary-bright); font-weight: 600;">hglabs.studio@gmail.com</a> indicando tu solicitud.</p>
+                        <p>Para ejercer cualquiera de estos derechos o solicitar la <strong>eliminación de tus datos</strong>, simplemente escríbenos un correo a <a href="mailto:hglabs.studio@gmail.com" class="legal-link">hglabs.studio@gmail.com</a> indicando tu solicitud.</p>
                     </section>
 
                     <section id="section-9" class="reveal">
@@ -160,9 +163,9 @@
                     <section id="section-10" class="reveal">
                         <h2>10. Contacto</h2>
                         <p>Si tienes preguntas sobre nuestra política de privacidad o el tratamiento de tus datos, nuestro equipo de transparencia está a tu disposición:</p>
-                        <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
-                            <p style="margin-bottom: 8px;">HGLabs Studio - Departamento de Privacidad</p>
-                            <a href="mailto:hglabs.studio@gmail.com" class="btn btn-primary" style="width: fit-content;">hglabs.studio@gmail.com</a>
+                        <div class="card contact-card">
+                            <p>HGLabs Studio - Departamento de Privacidad</p>
+                            <a href="mailto:hglabs.studio@gmail.com" class="btn btn-primary w-fit">hglabs.studio@gmail.com</a>
                         </div>
                     </section>
                 </article>
@@ -202,7 +205,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 HGLabs Studio.</p>
-                <div style="display: flex; gap: 24px;">
+                <div class="footer-bottom-links">
                     <span>Privacidad Garantizada</span>
                 </div>
             </div>
@@ -225,6 +228,28 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.header-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('mobile-active');
+            document.body.classList.toggle('no-scroll');
+            const isOpen = nav.classList.contains('mobile-active');
+            menuToggle.innerHTML = isOpen 
+                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.header-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('mobile-active');
+                document.body.classList.remove('no-scroll');
+                menuToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+            });
+        });
     </script>
 </body>
 </html>

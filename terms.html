@@ -24,6 +24,9 @@
                 <img src="logo.svg" alt="Logo Alerta Estafas" class="logo-img">
                 Alerta Estafas
             </a>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
             <nav class="header-nav">
                 <a href="index.html">Inicio</a>
                 <a href="privacy-policy.html">Privacidad</a>
@@ -35,9 +38,9 @@
     <div class="container">
         <main class="section">
             <div class="legal-header reveal">
-                <span style="color: var(--clr-primary-bright); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 16px;">Acuerdo de Seguridad Ciudadana</span>
+                <span class="legal-tag">Acuerdo de Seguridad Ciudadana</span>
                 <h1>Términos de Servicio</h1>
-                <p style="color: var(--clr-text-muted); font-size: 1.2rem;">Versión 1.1 | Actualizado: 1 de enero de 2026</p>
+                <p class="legal-subtitle">Versión 1.1 | Actualizado: 1 de enero de 2026</p>
             </div>
 
             <div class="legal-grid">
@@ -72,7 +75,7 @@
                         <h2>3. Descargo de Responsabilidad (IA)</h2>
                         <p>Dada la naturaleza cambiante de las estafas y las limitaciones tecnológicas, es importante destacar:</p>
                         <div class="card" style="border-left: 4px solid var(--clr-accent-red);">
-                            <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 16px;">Advertencia sobre IA</h3>
+                            <h3 class="legal-card-title">Advertencia sobre IA</h3>
                             <p>Los análisis realizados por inteligencia artificial son <strong>sugerencias estadísticas e informativas</strong>. No garantizamos una precisión del 100% ni la detección de todas las posibles variantes de fraude.</p>
                             <p>HGLabs Studio no se responsabiliza de decisiones financieras o personales tomadas basándose exclusivamente en las alertas de la aplicación.</p>
                         </div>
@@ -125,7 +128,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 HGLabs Studio.</p>
-                <div style="display: flex; gap: 24px;">
+                <div class="footer-bottom-links">
                     <span>Transparencia Radical</span>
                 </div>
             </div>
@@ -148,6 +151,28 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.header-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('mobile-active');
+            document.body.classList.toggle('no-scroll');
+            const isOpen = nav.classList.contains('mobile-active');
+            menuToggle.innerHTML = isOpen 
+                ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+                : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.header-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('mobile-active');
+                document.body.classList.remove('no-scroll');
+                menuToggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+            });
+        });
     </script>
 </body>
 </html>
